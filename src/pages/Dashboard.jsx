@@ -1,14 +1,13 @@
-import Meta from '../components/Meta';
-import Landscape from '../components/Landscape';
+import Meta from '../components/Meta'
 import Speechbubble from '../components/Speechbubble';
 import Header from '../components/Header';
 import Grids from "../components/Grids";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Home = () => {
+const Dashboard = () => {
   // page content
-  const pageTitle = 'Home'
+  const pageTitle = 'Dashboard'
 
 
   return (
@@ -23,10 +22,10 @@ const Home = () => {
             <Header/>
           </Row>
           <Row>
-            <Landscape/>
+            Something
           </Row>
           <Row>
-            <Col sm={10}>
+          <Col sm={10}>
               <Speechbubble/>
             </Col>
             <Col>
@@ -41,4 +40,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Dashboard

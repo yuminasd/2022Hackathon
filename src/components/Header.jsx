@@ -1,12 +1,21 @@
 import { Container } from 'react-bootstrap'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const Header = ({ head, description }) => {
+const Header = () => {
   return (
     <Container>
-      <div className='starter-template text-center mt-5'>
-        <h1>{head} Page</h1>
-        <p className='lead text-capitalize'>{description}</p>
+      <div style={{height: 135}}>
+        <Row>
+          <Col>
+            Welcome Home Arnold
+          </Col>
+          <Col>
+            Points: 4000
+          </Col>
+        </Row>
       </div>
+      
     </Container>
   )
 }

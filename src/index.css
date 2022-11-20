@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 
+@font-face {
+  font-family: "Minecraft";   /*Can be any text*/
+  src: local("Minecraft"),
+    url("./Fonts/Minecraft.ttf") format("truetype");
+}
+
 body {
-  font-family: "Comfortaa", cursive;
+  font-family: "Minecraft";
 }
 
 main {
