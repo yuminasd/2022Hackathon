@@ -10,7 +10,6 @@ const Home = () => {
   // page content
   const pageTitle = 'Home'
 
-
   return (
     <div>
       <Meta title={pageTitle}/>
