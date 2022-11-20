@@ -17,7 +17,7 @@ const Speechbubble = () => {
 
   const cycleShownHabit = (habitIndex) => {
     setLastHabit(habits[habitIndex]);
-    setDailyScore({ value: score.value + habits[habitIndex].score });
+    setScore({ value: score.value + habits[habitIndex].score });
     setDailyScore({ value: dailyScore.value + habits[habitIndex].score });
 
     const newGameExternalEvents = [...gameExternalEvents];
