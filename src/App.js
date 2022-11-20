@@ -21,6 +21,8 @@ const App = () => {
     { text: "I'd rather kill bees 🐝..." },
   ]);
 
+  // const habits = useState([{}]);
+
   const contextVals = {
     shownHabits,
   };

@@ -88,7 +88,6 @@ class Game {
 
   // public
   queueExternalEvent(event) {
-    console.log("!!! external event queued");
     this.externalEvents.push(event);
   }
 
@@ -106,13 +105,14 @@ class Game {
     const emittedEvents = this.eventBuilder.tick(tickCount);
     emittedEvents.externalEvents = this.externalEvents;
     if (emittedEvents.externalEvents.length)
-      console.log("!!! emittedEvents:", emittedEvents.externalEvents.length);
-    this.eventListener.tick(emittedEvents, tickCount);
+      this.eventListener.tick(emittedEvents, tickCount);
 
     this.clearExternalEvents(); // external events have been read in eventListener, dispose of them
 
     // this.house.tick(ctx, tickCount);
     this.trees.forEach((tree) => tree.tick(ctx, tickCount));
+
+    ctx.drawImage(this.imageRepo.staticHouse, 500, 50);
   }
 
   // private

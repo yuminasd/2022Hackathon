@@ -42,7 +42,6 @@ function GameCanvas({ canvasWidth, canvasHeight }) {
 
   useEffect(() => {
     if (!game) return;
-    console.log("!!! external tree grow queued");
     game.queueExternalEvent({
       type: "habitClicked",
       habits: shownHabits, // Lol sorry, too lazy to make a MainContext.gameExternalEvents
@@ -50,7 +49,7 @@ function GameCanvas({ canvasWidth, canvasHeight }) {
   }, [shownHabits]);
 
   return (
-    <div>
+    <div style={{ borderRadius: 10, overflow: "hidden" }}>
       <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
     </div>
   );

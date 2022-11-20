@@ -1,5 +1,6 @@
 import backgroundImg from "../assets/background.png";
 import houseBackgroundImg from "../assets/house/house_background.png";
+import staticHouseImg from "../assets/statichouse/house1.png";
 import houseNeutral0Img from "../assets/house/character-idle1.png";
 import houseNeutral1Img from "../assets/house/character-idle2.png";
 import houseNeutralEyes0Closed from "../assets/house/character-eyesclosed-idle1.png";
@@ -33,6 +34,7 @@ import flowerBlue2Img from "../assets/scenery/flower-blue3.png";
 
 const imageSources = {
   background: backgroundImg,
+  staticHouse: staticHouseImg,
   house: {
     background: houseBackgroundImg,
     neutral: {
