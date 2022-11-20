@@ -1,6 +1,7 @@
 import { loadImageRepo } from "./ImageRepo";
 import EventBuilder from "./EventBuilder";
 import EventListener from "./EventListener";
+import Tree from "./Tree";
 
 class Game {
   // private canvas: HTMLCanvasElement;
@@ -11,6 +12,8 @@ class Game {
   // public eventListener: EventListener;
 
   constructor(canvas) {
+    this.externalEvents = [];
+
     this.imageRepo = loadImageRepo();
 
     this.canvas = canvas;
@@ -26,9 +29,22 @@ class Game {
     //   this.imageRepo.house,
     //   this
     // );
-    this.trees = [{}];
+    this.trees = [
+      new Tree(
+        {
+          // pos: { x: canvas.width * 0.6, y: canvas.height * 0.5 },
+          pos: { x: 750, y: 30 },
+          width: 288,
+          height: 366,
+        },
+        this.imageRepo.tree,
+        this
+      ),
+    ];
+    this.flowers = [];
+
     this.eventBuilder = new EventBuilder(undefined);
-    this.eventListener = new EventListener(undefined, this.eventBuilder);
+    this.eventListener = new EventListener(undefined, this.eventBuilder, this);
 
     this.createUserEvents();
   }
@@ -71,15 +87,32 @@ class Game {
   }
 
   // public
+  queueExternalEvent(event) {
+    console.log("!!! external event queued");
+    this.externalEvents.push(event);
+  }
+
+  // private
+  clearExternalEvents() {
+    this.externalEvents = [];
+  }
+
+  // public
   tick(ctx, tickCount) {
     this.tickCount = tickCount;
 
     ctx.drawImage(this.imageRepo.background, 0, 0);
 
     const emittedEvents = this.eventBuilder.tick(tickCount);
+    emittedEvents.externalEvents = this.externalEvents;
+    if (emittedEvents.externalEvents.length)
+      console.log("!!! emittedEvents:", emittedEvents.externalEvents.length);
     this.eventListener.tick(emittedEvents, tickCount);
 
+    this.clearExternalEvents(); // external events have been read in eventListener, dispose of them
+
     // this.house.tick(ctx, tickCount);
+    this.trees.forEach((tree) => tree.tick(ctx, tickCount));
   }
 
   // private

@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Game from "../gameEntities/Game";
+import MainContext from "./context";
 
 function GameCanvas({ canvasWidth, canvasHeight }) {
   const [game, setGame] = useState();
-
   const canvasRef = useRef();
+  const [shownHabits, ...rest] = useContext(MainContext).shownHabits;
 
   // Main logic loop for canvas
   const draw = (ctx, tickCount) => {
@@ -38,6 +39,15 @@ function GameCanvas({ canvasWidth, canvasHeight }) {
       window.cancelAnimationFrame(animationFrameId);
     };
   }, [draw]);
+
+  useEffect(() => {
+    if (!game) return;
+    console.log("!!! external tree grow queued");
+    game.queueExternalEvent({
+      type: "habitClicked",
+      habits: shownHabits, // Lol sorry, too lazy to make a MainContext.gameExternalEvents
+    });
+  }, [shownHabits]);
 
   return (
     <div>

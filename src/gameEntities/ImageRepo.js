@@ -24,6 +24,9 @@ import treeBasic0Img from "../assets/scenery/tree-basict1.png";
 import treeBasic1Img from "../assets/scenery/tree-basict2.png";
 import treeBasic2Img from "../assets/scenery/tree-basict3.png";
 import treeBasic3Img from "../assets/scenery/tree-basict4.png";
+import treeBasicFlip1Img from "../assets/scenery/tree-basict-flip2.png";
+import treeBasicFlip2Img from "../assets/scenery/tree-basict-flip3.png";
+import treeBasicFlip3Img from "../assets/scenery/tree-basict-flip4.png";
 import flowerBlue0Img from "../assets/scenery/flower-blue1.png";
 import flowerBlue1Img from "../assets/scenery/flower-blue2.png";
 import flowerBlue2Img from "../assets/scenery/flower-blue3.png";
@@ -55,7 +58,12 @@ const imageSources = {
   },
   tree: {
     left: [treeBasic0Img, treeBasic1Img, treeBasic2Img, treeBasic3Img],
-    right: [treeBasic0Img, treeBasic1Img, treeBasic2Img, treeBasic3Img],
+    right: [
+      treeBasic0Img,
+      treeBasicFlip1Img,
+      treeBasicFlip2Img,
+      treeBasicFlip3Img,
+    ],
   },
   flower: {
     blue: [flowerBlue0Img, flowerBlue1Img, flowerBlue2Img],
