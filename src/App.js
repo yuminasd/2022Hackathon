@@ -52,6 +52,7 @@ const App = () => {
 
   const lastHabit = useState();
   const score = useState({ value: 7300 });
+  const dailyScore = useState({ value: 30 });
 
   const contextVals = {
     shownHabits,
@@ -60,6 +61,7 @@ const App = () => {
     lastHabit,
     gameExternalEvents,
     score,
+    dailyScore,
   };
 
   return (

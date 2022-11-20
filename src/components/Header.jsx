@@ -8,14 +8,15 @@ const Header = ({Header, width}) => {
   const masterContext = useContext(MainContext);
   const [lastHabit, ...rest] = useContext(MainContext).lastHabit;
   const [score, setScore] = useContext(MainContext).score;
+  const [dailyScore, setDailyScore] = useContext(MainContext).dailyScore;
 
-  useEffect(() => {
-    if (!score || !lastHabit) return;
-    console.log("!!! score", score);
-    // const [s, setS] = masterContext.score;
-    const newScore = { value: score.value + lastHabit.score };
-    setScore(newScore);
-  }, [lastHabit]);
+  // useEffect(() => {
+  //   if (!score || !lastHabit) return;
+  //   console.log("!!! score", score);
+  //   // const [s, setS] = masterContext.score;
+  //   const newScore = { value: score.value + lastHabit.score };
+  //   setScore(newScore);
+  // }, [lastHabit]);
 
   return (
     <Container>
@@ -28,9 +29,9 @@ const Header = ({Header, width}) => {
                 <Button variant="primary">
                   Points: {score ? score.value : 7300}
                 </Button>
-                {/* <Button variant="primary">
-                  Points: {masterContext.score[0].value}
-                </Button> */}
+                <Button variant="light">
+                  +{dailyScore ? dailyScore.value : 30}/day
+                </Button>
               </div>
             </div>
           </Col>

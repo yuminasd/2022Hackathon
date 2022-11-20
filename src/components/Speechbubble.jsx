@@ -12,9 +12,13 @@ const Speechbubble = () => {
   const [gameExternalEvents, setGameExternalEvents] =
     useContext(MainContext).gameExternalEvents;
   const [lastHabit, setLastHabit] = useContext(MainContext).lastHabit;
+  const [score, setScore] = useContext(MainContext).score;
+  const [dailyScore, setDailyScore] = useContext(MainContext).dailyScore;
 
   const cycleShownHabit = (habitIndex) => {
     setLastHabit(habits[habitIndex]);
+    setDailyScore({ value: score.value + habits[habitIndex].score });
+    setDailyScore({ value: dailyScore.value + habits[habitIndex].score });
 
     const newGameExternalEvents = [...gameExternalEvents];
     newGameExternalEvents.push({
