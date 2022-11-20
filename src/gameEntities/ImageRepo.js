@@ -19,7 +19,8 @@ import backgroundImg from "../assets/background.png";
 // import houseSquishedSquint2Img from "../assets/house/house_squished_squint2.svg";
 import houseNeutral0Img from "../assets/house/character-idle1.png";
 import houseNeutral1Img from "../assets/house/character-idle2.png";
-import houseNeutralEyesClosed from "../assets/house/house1.png";
+import houseNeutralEyes0Closed from "../assets/house/character-eyesclosed-idle1.png";
+import houseNeutralEyes1Closed from "../assets/house/character-eyesclosed-idle2.png";
 import houseLookLeft0Img from "../assets/house/house1.png";
 import houseLookLeft1Img from "../assets/house/house1.png";
 import houseLookLeft2Img from "../assets/house/house1.png";
@@ -49,7 +50,7 @@ const imageSources = {
   house: {
     neutral: {
       idle: [houseNeutral0Img, houseNeutral1Img],
-      eyesClosed: houseNeutralEyesClosed,
+      eyesClosed: [houseNeutralEyes0Closed, houseNeutralEyes1Closed],
     },
     look: {
       left: [houseLookLeft0Img, houseLookLeft1Img, houseLookLeft2Img],

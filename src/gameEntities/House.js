@@ -28,11 +28,11 @@ class House extends Sprite {
         frames: [
           {
             image: this.imageRepo.neutral.idle[0],
-            duration: 10,
+            duration: 30,
           },
           {
             image: this.imageRepo.neutral.idle[1],
-            duration: 10,
+            duration: 30,
           },
         ],
         repeat: true,
@@ -41,11 +41,11 @@ class House extends Sprite {
         name: "blink",
         frames: [
           {
-            image: this.imageRepo.neutral.eyesClosed,
+            image: this.imageRepo.neutral.eyesClosed[0],
             duration: 5,
           },
           {
-            image: this.imageRepo.neutral.idle,
+            image: this.imageRepo.neutral.idle[0],
             duration: 8,
           },
         ],
@@ -98,7 +98,7 @@ class House extends Sprite {
               duration: squishDuration,
             },
             {
-              image: this.imageRepo.neutral.idle,
+              image: this.imageRepo.neutral.idle[0],
               duration: squishDuration,
             },
             {
@@ -106,7 +106,7 @@ class House extends Sprite {
               duration: squishDuration,
             },
             {
-              image: this.imageRepo.idle,
+              image: this.imageRepo.neutral.idle[0],
               duration: squishDuration,
             },
           ],
@@ -192,12 +192,6 @@ class House extends Sprite {
   tick(ctx, tickCount) {
     const animation = this.selectAnimation();
 
-    console.log(
-      "!!! tick - anim is",
-      animation ? animation.name : "NO_ANIM_SELECTED",
-      animation
-    );
-
     if (animation) {
       this.setAnimation(animation, tickCount);
     }
@@ -212,11 +206,7 @@ class House extends Sprite {
     if (image) {
       this.prevImage = image;
     }
-    console.log(
-      "!!! tick - anim is",
-      animation ? animation.name : "NO_ANIM_SELECTED",
-      animation
-    );
+
     ctx.drawImage(image || this.prevImage, this.pos.x, this.pos.y);
   }
 
