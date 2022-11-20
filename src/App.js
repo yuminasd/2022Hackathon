@@ -20,13 +20,41 @@ const App = () => {
   // const [shownHabits, setShownHabits] = useState([
   const shownHabits = useState([
     { text: "All lights off at 10" },
-    { text: "I'd rather kill bees 🐝..." },
+    { text: "Keep your home slightly cooler and wear more layers" },
   ]);
 
-  // const habits = useState([{}]);
+  const shownHabitIndices = useState([0, 1]);
+
+  const habits = useState([
+    { text: "All lights off at 10", score: 10 },
+    { text: "Keep your home slightly cooler and wear more layers", score: 50 },
+    { text: "Avoid placing electronics near a thermostat", score: 40 },
+    {
+      text: "Have set meal times to avoid reheating food after it is cooked",
+      score: 20,
+    },
+    { text: "Close your blinds during hot sunny days", score: 20 },
+    {
+      text: "Put a smart switch on your car's block heater to only turn on 5 hours before it is needed",
+      score: 50,
+    },
+    {
+      text: "Charge your electric car at night when power is cheaper",
+      score: 50,
+    },
+    {
+      text: "Keep your thermostat set to lower temperatures while you sleep, and set the temperature to raise back up to normal levels at 5am",
+      score: 60,
+    },
+  ]);
+
+  const gameExternalEvents = useState([]);
 
   const contextVals = {
     shownHabits,
+    shownHabitIndices,
+    habits,
+    gameExternalEvents,
   };
 
   return (
