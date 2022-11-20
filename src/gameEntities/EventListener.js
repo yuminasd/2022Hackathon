@@ -37,10 +37,8 @@ class EventListener {
 
   onEmittedExternalEvents(externalEvents, tickCount) {
     externalEvents.forEach((externalEvent) => {
-      console.log("!!! iterating external event");
       switch (externalEvent.type) {
         case "habitClicked":
-          console.log("!!! habit clicked");
           this.onHabitClicked(externalEvent, tickCount);
           break;
         default:
@@ -78,21 +76,33 @@ class EventListener {
   onHabitClicked(event, tickCount) {
     // Grow 1 random tree or spawn 1 random tree
     const youngTrees = this.game.trees.filter((tree) => !tree.isGrown());
-    const growExistingTree = Math.random() < youngTrees.length * 0.1;
+    const growExistingTree = Math.random() < youngTrees.length * 0.2;
     if (growExistingTree) {
       youngTrees[Math.floor(Math.random() * youngTrees.length)].grow();
     } else {
-      this.game.trees.push(
-        new Tree(
-          {
-            pos: { x: Math.random() * 300 + 650, y: Math.random() * 100 + 30 },
-            width: 288,
-            height: 366,
+      const scale = Math.random() * 0.4 + 0.6;
+      const tree = new Tree(
+        {
+          pos: {
+            x: Math.random() * 320 + 650,
+            y: Math.random() * 100 + 40,
           },
-          this.game.imageRepo.tree,
-          this
-        )
+          width: 288 * scale,
+          height: 366 * scale,
+        },
+        this.game.imageRepo.tree,
+        this
       );
+
+      const heightFromGround = 400 - tree.bottom;
+      if (heightFromGround > 0) {
+        tree.pos.y += heightFromGround;
+      }
+
+      this.game.trees.push(tree);
+
+      // Sort trees
+      this.game.trees.sort((a, b) => a.pos.y < b.pos.y);
     }
   }
 }

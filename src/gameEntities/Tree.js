@@ -13,7 +13,7 @@ class Tree extends Sprite {
   }
 
   tick(ctx, tickCount) {
-    ctx.drawImage(this.image, this.pos.x, this.pos.y);
+    ctx.drawImage(this.image, this.pos.x, this.pos.y, this.width, this.height);
   }
 
   isGrown() {
