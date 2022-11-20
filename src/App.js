@@ -50,11 +50,16 @@ const App = () => {
 
   const gameExternalEvents = useState([]);
 
+  const lastHabit = useState();
+  const score = useState({ value: 7300 });
+
   const contextVals = {
     shownHabits,
     shownHabitIndices,
     habits,
+    lastHabit,
     gameExternalEvents,
+    score,
   };
 
   return (

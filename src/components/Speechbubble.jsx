@@ -11,8 +11,11 @@ const Speechbubble = () => {
   const [habits, ...rest] = useContext(MainContext).habits;
   const [gameExternalEvents, setGameExternalEvents] =
     useContext(MainContext).gameExternalEvents;
+  const [lastHabit, setLastHabit] = useContext(MainContext).lastHabit;
 
   const cycleShownHabit = (habitIndex) => {
+    setLastHabit(habits[habitIndex]);
+
     const newGameExternalEvents = [...gameExternalEvents];
     newGameExternalEvents.push({
       type: "habitClicked",
