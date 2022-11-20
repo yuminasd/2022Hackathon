@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Grids from "../components/Grids";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Account from "../components/Account"
 
 const Settings = () => {
     //page content
@@ -11,29 +12,30 @@ const Settings = () => {
     return(
         <div>
             <Meta title={pageTitle} />
-            <Row className="align-items-center">
+            <Row>
                 <Col sm={1}>
                     <Grids
                         Home={"Home-n.svg"}
                         Dashboard={"Control-n.svg"}
                         Habits={"Habits-n.svg"}
                         Settings={"Settings-s.svg"}
+                        Leaderboard={"Leaderboard-n.svg"}
                     />
                 </Col>
-
+                <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
                 <Col>
                     <Row>
                         <Header
-                        Header={"../../SettingsTitleHeader.svg"}>
+                        Header={"../../SettingsTitleHeader.svg"} width={"98%"}>
                         </Header>
-                        <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
-                    </div>
+                        
                     </Row>
 
                     <Row>
-                        <img src="Accounts.png" alt="" width="98%"/>   
+                        <Account/> 
                     </Row>
                 </Col>
+                </div>
             </Row>
         </div>
     );

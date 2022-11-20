@@ -14,20 +14,21 @@ const Dashboard = () => {
   return (
     <div>
       <Meta title={pageTitle} />
-      <Row className="align-items-center">
+      <Row>
         <Col sm={1}>
           <Grids
             Home={"Home-n.svg"}
             Dashboard={"Control-s.svg"}
             Habits={"Habits-n.svg"}
             Settings={"Settings-n.svg"}
+            Leaderboard={"Leaderboard-n.svg"}
           />
         </Col>
         <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
         <Col>
           <Row>
             <Header 
-            Header={"../../ControlPageHeader.svg"}
+            Header={"../../ControlPageHeader.svg"} width={"98%"}
             />
           </Row>
             <Row>

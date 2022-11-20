@@ -3,6 +3,7 @@ import Grids from '../components/Grids'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from '../components/Header';
+import Advice from '../components/Advice';
 
 const Habits = () => {
   // page content
@@ -12,22 +13,24 @@ const Habits = () => {
   return (
     <div>
       <Meta title={pageTitle}/>
-      <Row className="align-items-center">
+      <Row>
         <Col sm={1}>
-            <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"} Settings={"Settings-n.svg"}/>
+            <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"} Settings={"Settings-n.svg"} Leaderboard={"Leaderboard-n.svg"}/>
         </Col>
-        <Col>
-        <Row>
-            <Header
-              Header={"../../HabitPageHeader.svg"}>
-            </Header>
-        </Row>
-        <Row>
         <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
-                <img src="Habits.png" alt="" width="98%"/>
-        </div>
-        </Row>
+        <Col>
+            <Row>
+                <Header
+                Header={"../../HabitPageHeader.svg"} width={"98%"}>
+                </Header>
+            </Row>
+            <Row>
+            
+                    <Advice/>
+            
+            </Row>
         </Col>
+        </div>
         </Row>
     </div>
   )

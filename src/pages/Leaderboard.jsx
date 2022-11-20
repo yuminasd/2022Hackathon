@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Grids from "../components/Grids";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Stats from "../components/Stats";
 
 const Leaderboard = () => {
     //page content
@@ -11,23 +12,24 @@ const Leaderboard = () => {
     return(
         <div>
             <Meta title={pageTitle} />
-            <Row className="align-items-center">
+            <Row>
             <Col sm={1}>
                 <Grids
                     Home={"Home-n.svg"}
                     Dashboard={"Control-n.svg"}
                     Habits={"Habits-n.svg"}
-                    Settings={"Settings-s.svg"}
+                    Settings={"Settings-n.svg"}
+                    Leaderboard={"Leaderboard-s.svg"}
                 />
             </Col>
             <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
             <Col>
                 <Row>
                 <Header
-                Header={"../../LeaderboardHeaderTitle.svg"} />
+                Header={"../../LeaderboardHeaderTitle.svg"} width={"98%"}/>
                 </Row>
                 <Row>
-                    <img src="Leaderboard.png" alt="" width="98%"/>             
+                    <Stats/>             
                 </Row>
             </Col>
             </div>

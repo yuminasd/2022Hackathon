@@ -14,19 +14,21 @@ const Home = () => {
   return (
     <div>
       <Meta title={pageTitle} />
-      <Row className="align-items-center">
+      <Row>
         <Col sm={1}>
           <Grids
             Home={"Home-s.svg"}
             Dashboard={"Control-n.svg"}
             Habits={"Habits-n.svg"}
             Settings={"Settings-n.svg"}
+            Leaderboard={"Leaderboard-n.svg"}
           />
         </Col>
+        <div style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
         <Col>
           <Row>
             <Header
-            Header={"../../HomePageHeader.svg"} />
+            Header={"../../HomePageHeader.svg"} width={"101.35%"} />
           </Row>
           <Row>
             {/* <Landscape /> */}
@@ -41,6 +43,7 @@ const Home = () => {
             </Col>
           </Row>
         </Col>
+        </div>
       </Row>
     </div>
   );

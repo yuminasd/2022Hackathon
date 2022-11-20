@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import MainContext from "./context";
 import { useEffect, useContext } from "react";
 
-const Header = ({ Header }) => {
+const Header = ({Header, width}) => {
   const masterContext = useContext(MainContext);
   const [lastHabit, ...rest] = useContext(MainContext).lastHabit;
   const [score, setScore] = useContext(MainContext).score;
@@ -22,7 +22,7 @@ const Header = ({ Header }) => {
       <div style={{ height: 135 }}>
         <Row>
           <Col>
-            <img src={Header} height="auto" width="100%" />
+            <img src={Header} height="auto" width={width} />
             <div style={{ position: "absolute" }}>
               <div style={{ right: 100, top: 10 }}>
                 <Button variant="primary">

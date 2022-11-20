@@ -28,18 +28,18 @@ const Grids = ({Home, Dashboard, Habits, Settings, Leaderboard}) => {
                     </div>
                     <div>
                         <button class="btn btn-light">
-                            <Link to="/Settings" className="nav-link px-2 link-secondary">
-                                <img src={Settings} alt=""/>
-                            </Link> 
-                        </button>
-                    </div> 
-                    <div>
-                        <button class="btn btn-light">
                             <Link to="/Leaderboard" className="nav-link px-2 link-secondary">
                                 <img src={Leaderboard} alt=""/>
                             </Link> 
                         </button>
                     </div>
+                    <div>
+                        <button class="btn btn-light">
+                            <Link to="/Settings" className="nav-link px-2 link-secondary">
+                                <img src={Settings} alt=""/>
+                            </Link> 
+                        </button>
+                    </div> 
                     </div>   
         </Container>
     )
