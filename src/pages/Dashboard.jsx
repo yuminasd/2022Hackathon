@@ -27,11 +27,11 @@ const Dashboard = () => {
           </Row>
           <Row>Something</Row>
           <Row>
-            <Col sm={10}>
+            <Col sm={9}>
               <Speechbubble />
             </Col>
             <Col>
-              <GameHouseCanvas canvasWidth={150} canvasHeight={162} />
+              <GameHouseCanvas canvasWidth={240} canvasHeight={290} />
             </Col>
           </Row>
         </Col>

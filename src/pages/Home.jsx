@@ -31,12 +31,11 @@ const Home = () => {
             <GameCanvas canvasWidth={1176} canvasHeight={480} />
           </Row>
           <Row>
-            <Col sm={10}>
+            <Col sm={9}>
               <Speechbubble />
             </Col>
             <Col>
-              {/* <img src="character-idle1.png" alt="" /> */}
-              <GameHouseCanvas canvasWidth={150} canvasHeight={162} />
+              <GameHouseCanvas canvasWidth={240} canvasHeight={290} />
             </Col>
           </Row>
         </Col>

@@ -1,22 +1,5 @@
 import backgroundImg from "../assets/background.png";
-// import houseNeutralImg from "../assets/house/house_neutral.svg";
-// import houseNeutralEyesClosed from "../assets/house/house_neutral_eyes_closed.svg";
-// import houseLookLeft0Img from "../assets/house/house_look_left0.svg";
-// import houseLookLeft1Img from "../assets/house/house_look_left1.svg";
-// import houseLookLeft2Img from "../assets/house/house_look_left2.svg";
-// import houseLookRight0Img from "../assets/house/house_look_right0.svg";
-// import houseLookRight1Img from "../assets/house/house_look_right1.svg";
-// import houseLookRight2Img from "../assets/house/house_look_right2.svg";
-// import houseWalkLeft1Img from "../assets/house/house_walk_left1.svg";
-// import houseWalkLeft2Img from "../assets/house/house_walk_left2.svg";
-// import houseWalkRight1Img from "../assets/house/house_walk_right1.svg";
-// import houseWalkRight2Img from "../assets/house/house_walk_right2.svg";
-// import houseSquished0Img from "../assets/house/house_squished0.svg";
-// import houseSquished1Img from "../assets/house/house_squished1.svg";
-// import houseSquished2Img from "../assets/house/house_squished2.svg";
-// import houseSquishedSquint0Img from "../assets/house/house_squished_squint0.svg";
-// import houseSquishedSquint1Img from "../assets/house/house_squished_squint1.svg";
-// import houseSquishedSquint2Img from "../assets/house/house_squished_squint2.svg";
+import houseBackgroundImg from "../assets/house/house_background.png";
 import houseNeutral0Img from "../assets/house/character-idle1.png";
 import houseNeutral1Img from "../assets/house/character-idle2.png";
 import houseNeutralEyes0Closed from "../assets/house/character-eyesclosed-idle1.png";
@@ -48,6 +31,7 @@ import flowerBlue2Img from "../assets/scenery/flower-blue3.png";
 const imageSources = {
   background: backgroundImg,
   house: {
+    background: houseBackgroundImg,
     neutral: {
       idle: [houseNeutral0Img, houseNeutral1Img],
       eyesClosed: [houseNeutralEyes0Closed, houseNeutralEyes1Closed],
