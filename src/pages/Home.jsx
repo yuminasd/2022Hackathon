@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Grids from "../components/Grids";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import GameCanvas from "../components/GameCanvas";
 
 const Home = () => {
   // page content
@@ -30,6 +31,7 @@ const Home = () => {
             </Col>
             <Col>
               <img src="character-idle1.png" alt=""/>
+              <GameCanvas />
             </Col>
           </Row>
         </Col>
@@ -37,7 +39,7 @@ const Home = () => {
       
 
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
