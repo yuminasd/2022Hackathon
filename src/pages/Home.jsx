@@ -20,6 +20,7 @@ const Home = () => {
             Home={"Home-s.svg"}
             Dashboard={"Control-n.svg"}
             Habits={"Habits-n.svg"}
+            Settings={"Settings-n.svg"}
           />
         </Col>
         <Col>

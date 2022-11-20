@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Container } from 'react-bootstrap'
 
-const Grids = ({Home, Dashboard, Habits}) => {
+const Grids = ({Home, Dashboard, Habits, Settings}) => {
     return(
         <Container>
+            <div>
                     <div>
                         <button  class="btn btn-light">
                             <Link to="/" className="nav-link px-2 link-secondary">
@@ -26,12 +27,13 @@ const Grids = ({Home, Dashboard, Habits}) => {
                         </button>
                     </div>
                     <div>
-                        <button class="btn btn-light" disabled>
-                            <Link to="/Habits" className="nav-link px-2 link-secondary">
-                                <img src="Settings-n.svg" alt=""/>
+                        <button class="btn btn-light">
+                            <Link to="/Settings" className="nav-link px-2 link-secondary">
+                                <img src={Settings} alt=""/>
                             </Link> 
                         </button>
-                    </div>    
+                    </div> 
+                    </div>   
         </Container>
     )
 }

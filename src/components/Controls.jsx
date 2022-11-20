@@ -8,12 +8,10 @@ const Controls = () => {
         <Container>
             <Row>
                 <div>
-                <img src="Home_Controls_Title.png" alt="" width="82%"/>
+                    <img src="Rooms.png" alt="" width="98%"/>
                 </div>
-            </Row>
-            <Row>
                 <div>
-                    <img src="Rooms.png" alt="" width="82%"/>
+                    <img src="Devices.png" alt="" width="98%"/>
                 </div>
             </Row>
             <Row>
@@ -23,22 +21,10 @@ const Controls = () => {
                     <Col>
                     </Col>
                     <Col>
-                        <div>
-                            <button>
-
-                            </button>
-                        </div>
-                        <div>
-                            <button>
-
-                            </button>
-                        </div>
                     </Col>
                 </Col>
                 <Col>
-                    <div>
-                        Fan goes here
-                    </div>
+
                 </Col>
                 <Col>
                     <div>
@@ -49,9 +35,6 @@ const Controls = () => {
                 <Col>
                 </Col>
                 <Col>
-                    <div>
-                        Add Device
-                    </div>
                 </Col>
                 <Col>
                 </Col>

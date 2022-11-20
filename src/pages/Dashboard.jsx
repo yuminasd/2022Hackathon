@@ -20,6 +20,7 @@ const Dashboard = () => {
             Home={"Home-n.svg"}
             Dashboard={"Control-s.svg"}
             Habits={"Habits-n.svg"}
+            Settings={"Settings-n.svg"}
           />
         </Col>
         <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
@@ -27,7 +28,9 @@ const Dashboard = () => {
           <Row>
             <Header />
           </Row>
-          <Row>Something</Row>
+            <Row>
+                <Controls/>
+            </Row>
           <Row>
             <Col sm={9}>
               <Speechbubble />

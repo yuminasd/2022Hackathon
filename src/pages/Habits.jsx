@@ -13,10 +13,12 @@ const Habits = () => {
       <Meta title={pageTitle}/>
       <Row className="align-items-center">
         <Col sm={1}>
-            <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"}/>
+            <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"} Settings={"Settings-n.svg"}/>
         </Col>
         <Col>
-            Placeholder
+            <Row>
+                <img src="Habits.png" alt="" width="98%"/>
+            </Row>
         </Col>
         </Row>
     </div>
