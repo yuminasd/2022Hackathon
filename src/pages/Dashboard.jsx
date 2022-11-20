@@ -23,18 +23,16 @@ const Dashboard = () => {
         </Col>
         <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
         <Col>
-            <Row>
-                <Controls/>
-            </Row>
-            <Row>
-            <Col sm={10}>
-                <Speechbubble/>
-                </Col>
-                <Col>
-                <img src="character-idle1.png" alt=""/>
-                </Col>
-                <Col>
-              <GameHouseCanvas canvasWidth={150} canvasHeight={162} />
+          <Row>
+            <Header />
+          </Row>
+          <Row>Something</Row>
+          <Row>
+            <Col sm={9}>
+              <Speechbubble />
+            </Col>
+            <Col>
+              <GameHouseCanvas canvasWidth={240} canvasHeight={290} />
             </Col>
             </Row>
             </Col>

@@ -1,8 +1,11 @@
 import { loadImageRepo } from "./ImageRepo";
+import House from "./House";
 import EventBuilder from "./EventBuilder";
 import EventListener from "./EventListener";
 
-class Game {
+// Game code but just for the house only. I'm too lazy to separate Game into a reusable element
+
+class GameHouse {
   // private canvas: HTMLCanvasElement;
   // private tickCount: number = 0;
   // private imageRepo = loadImageRepo();
@@ -14,21 +17,20 @@ class Game {
     this.imageRepo = loadImageRepo();
 
     this.canvas = canvas;
-    // this.house = new House(
-    //   {
-    //     pos: {
-    //       x: canvas.width / 2 - 150 / 2,
-    //       y: canvas.height * 0.6,
-    //     },
-    //     width: 150,
-    //     height: 162,
-    //   },
-    //   this.imageRepo.house,
-    //   this
-    // );
-    this.trees = [{}];
-    this.eventBuilder = new EventBuilder(undefined);
-    this.eventListener = new EventListener(undefined, this.eventBuilder);
+    this.house = new House(
+      {
+        pos: {
+          x: (this.canvas.width - 150) / 2,
+          y: 55,
+        },
+        width: 150,
+        height: 162,
+      },
+      this.imageRepo.house,
+      this
+    );
+    this.eventBuilder = new EventBuilder(this.house);
+    this.eventListener = new EventListener(this.house, this.eventBuilder);
 
     this.createUserEvents();
   }
@@ -74,12 +76,13 @@ class Game {
   tick(ctx, tickCount) {
     this.tickCount = tickCount;
 
-    ctx.drawImage(this.imageRepo.background, 0, 0);
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    ctx.drawImage(this.imageRepo.house.background, 0, 0);
 
     const emittedEvents = this.eventBuilder.tick(tickCount);
     this.eventListener.tick(emittedEvents, tickCount);
 
-    // this.house.tick(ctx, tickCount);
+    this.house.tick(ctx, tickCount);
   }
 
   // private
@@ -94,4 +97,4 @@ class Game {
   pressCancelEventHandler = (event) => {};
 }
 
-export default Game;
+export default GameHouse;
