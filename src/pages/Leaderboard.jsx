@@ -27,6 +27,12 @@ const Leaderboard = () => {
                 <Row>
                 <Header
                 Header={"../../LeaderboardHeaderTitle.svg"} width={"98%"}/>
+                <p height="100">
+
+                </p>
+                <p height="100">
+
+                </p>
                 </Row>
                 <Row>
                     <Stats/>             

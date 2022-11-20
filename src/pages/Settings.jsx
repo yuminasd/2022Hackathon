@@ -28,6 +28,12 @@ const Settings = () => {
                         <Header
                         Header={"../../SettingsTitleHeader.svg"} width={"98%"}>
                         </Header>
+                        <p height="100">
+
+                </p>
+                <p height="100">
+
+                </p>
                         
                     </Row>
 

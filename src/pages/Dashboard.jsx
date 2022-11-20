@@ -30,6 +30,12 @@ const Dashboard = () => {
             <Header 
             Header={"../../ControlPageHeader.svg"} width={"98%"}
             />
+            <p height="100">
+
+</p>
+<p height="100">
+
+</p>
           </Row>
             <Row>
                 <Controls/>

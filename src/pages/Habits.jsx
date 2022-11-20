@@ -23,6 +23,12 @@ const Habits = () => {
                 <Header
                 Header={"../../HabitPageHeader.svg"} width={"98%"}>
                 </Header>
+                <p height="100">
+
+                </p>
+                <p height="100">
+
+                </p>
             </Row>
             <Row>
             
