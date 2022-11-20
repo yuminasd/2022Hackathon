@@ -1,6 +1,6 @@
 import Meta from "../components/Meta";
 import Speechbubble from "../components/Speechbubble";
-import Header from "../components/Header";
+import Controls from '../components/Controls';
 import Grids from "../components/Grids";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -21,20 +21,24 @@ const Dashboard = () => {
             Habits={"Habits-n.svg"}
           />
         </Col>
+        <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
         <Col>
-          <Row>
-            <Header />
-          </Row>
-          <Row>Something</Row>
-          <Row>
+            <Row>
+                <Controls/>
+            </Row>
+            <Row>
             <Col sm={10}>
-              <Speechbubble />
-            </Col>
-            <Col>
+                <Speechbubble/>
+                </Col>
+                <Col>
+                <img src="character-idle1.png" alt=""/>
+                </Col>
+                <Col>
               <GameHouseCanvas canvasWidth={150} canvasHeight={162} />
             </Col>
-          </Row>
-        </Col>
+            </Row>
+            </Col>
+        </div>
       </Row>
     </div>
   );

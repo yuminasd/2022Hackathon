@@ -8,7 +8,7 @@ const Speechbubble = () => {
             <Row>
                 <div>
                     <button>
-                        Did you know you saved 30 trees?
+                    Did you know you can save 10 Trees this week? Currently it is 20°C, automate your thermostat through our smart AI based on real time weather data to automatically turn off cooling when not needed!
                     </button>
                 </div>
 
