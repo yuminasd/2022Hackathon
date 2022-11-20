@@ -31,6 +31,9 @@ import treeBasicFlip3Img from "../assets/scenery/tree-basict-flip4.png";
 import flowerBlue0Img from "../assets/scenery/flower-blue1.png";
 import flowerBlue1Img from "../assets/scenery/flower-blue2.png";
 import flowerBlue2Img from "../assets/scenery/flower-blue3.png";
+import cloud1Img from "../assets/scenery/cloud1.png";
+import cloud2Img from "../assets/scenery/cloud2.png";
+import cloud3Img from "../assets/scenery/cloud3.png";
 
 const imageSources = {
   background: backgroundImg,
@@ -70,6 +73,7 @@ const imageSources = {
   flower: {
     blue: [flowerBlue0Img, flowerBlue1Img, flowerBlue2Img],
   },
+  clouds: [cloud1Img, cloud2Img, cloud3Img],
 };
 
 const castToImages = (imageTree) => {
