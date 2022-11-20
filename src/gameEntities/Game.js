@@ -2,6 +2,7 @@ import { loadImageRepo } from "./ImageRepo";
 import EventBuilder from "./EventBuilder";
 import EventListener from "./EventListener";
 import Tree from "./Tree";
+import Cloud from "./Cloud";
 
 class Game {
   // private canvas: HTMLCanvasElement;
@@ -42,11 +43,14 @@ class Game {
       ),
     ];
     this.flowers = [];
+    this.clouds = [];
 
     this.eventBuilder = new EventBuilder(undefined);
     this.eventListener = new EventListener(undefined, this.eventBuilder, this);
 
     this.createUserEvents();
+
+    this.spawnClouds();
   }
 
   // private
@@ -109,6 +113,8 @@ class Game {
 
     this.clearExternalEvents(); // external events have been read in eventListener, dispose of them
 
+    this.clouds.forEach((cloud) => cloud.tick(ctx, tickCount));
+
     // this.house.tick(ctx, tickCount);
     this.trees.forEach((tree) => tree.tick(ctx, tickCount));
 
@@ -125,6 +131,32 @@ class Game {
   releaseEventHandler = (event) => {};
 
   pressCancelEventHandler = (event) => {};
+
+  // public
+  spawnClouds() {
+    const numClouds = Math.floor(Math.random() * 6) + 1;
+    for (let i = 0; i < numClouds; i++) {
+      const cloud = new Cloud(
+        {
+          pos: {
+            x: Math.random() * 1500 + 100,
+            y: Math.random() * 400 - 100,
+          },
+          width: 0, // ignored,
+          height: 0, // ignored
+        },
+        this.imageRepo.clouds,
+        this
+      );
+
+      const heightDiff = cloud.bottom - 300;
+      if (heightDiff > 0) {
+        cloud.pos.y -= heightDiff;
+      }
+
+      this.clouds.push(cloud);
+    }
+  }
 }
 
 export default Game;

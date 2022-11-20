@@ -44,10 +44,6 @@ function GameCanvas({ canvasWidth, canvasHeight }) {
 
   useEffect(() => {
     if (!gameExternalEvents.length || !game) return;
-    // game.queueExternalEvent({
-    //   type: "habitClicked",
-    //   habits: shownHabits, // Lol sorry, too lazy to make a MainContext.gameExternalEvents
-    // });
     gameExternalEvents.forEach((e) => game.queueExternalEvent(e));
     setGameExternalEvents([]);
   }, [gameExternalEvents]);
