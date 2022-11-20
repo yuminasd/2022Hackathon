@@ -5,7 +5,9 @@ import MainContext from "./context";
 function GameCanvas({ canvasWidth, canvasHeight }) {
   const [game, setGame] = useState();
   const canvasRef = useRef();
-  const [shownHabits, ...rest] = useContext(MainContext).shownHabits;
+  // const [shownHabits, ...rest] = useContext(MainContext).shownHabits;
+  const [gameExternalEvents, setGameExternalEvents] =
+    useContext(MainContext).gameExternalEvents;
 
   // Main logic loop for canvas
   const draw = (ctx, tickCount) => {
@@ -41,12 +43,14 @@ function GameCanvas({ canvasWidth, canvasHeight }) {
   }, [draw]);
 
   useEffect(() => {
-    if (!game) return;
-    game.queueExternalEvent({
-      type: "habitClicked",
-      habits: shownHabits, // Lol sorry, too lazy to make a MainContext.gameExternalEvents
-    });
-  }, [shownHabits]);
+    if (!gameExternalEvents.length || !game) return;
+    // game.queueExternalEvent({
+    //   type: "habitClicked",
+    //   habits: shownHabits, // Lol sorry, too lazy to make a MainContext.gameExternalEvents
+    // });
+    gameExternalEvents.forEach((e) => game.queueExternalEvent(e));
+    setGameExternalEvents([]);
+  }, [gameExternalEvents]);
 
   return (
     <div style={{ borderRadius: 10, overflow: "hidden" }}>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,11 +6,29 @@ import MainContext from "./context";
 
 const Speechbubble = () => {
   const [shownHabits, setShownHabits] = useContext(MainContext).shownHabits;
+  const [shownHabitIndices, setShownHabitIndices] =
+    useContext(MainContext).shownHabitIndices;
+  const [habits, ...rest] = useContext(MainContext).habits;
+  const [gameExternalEvents, setGameExternalEvents] =
+    useContext(MainContext).gameExternalEvents;
 
   const cycleShownHabit = (habitIndex) => {
-    const newShownHabits = [...shownHabits];
-    newShownHabits[habitIndex] = { text: "Nevermind, sorry bees 🐝🐝" };
-    setShownHabits(newShownHabits);
+    const newGameExternalEvents = [...gameExternalEvents];
+    newGameExternalEvents.push({
+      type: "habitClicked",
+      habit: habits[habitIndex],
+    });
+    setGameExternalEvents(newGameExternalEvents);
+
+    const newHabitIndices = [...shownHabitIndices];
+    const otherHabitIndex = shownHabitIndices[(habitIndex + 1) % 2];
+    let newIndex = newHabitIndices[habitIndex];
+    while (++newIndex == otherHabitIndex) {
+      newIndex %= habits.length;
+    }
+    newIndex %= habits.length;
+    newHabitIndices[habitIndex] = newIndex;
+    setShownHabitIndices(newHabitIndices);
   };
 
   return (
@@ -29,14 +47,14 @@ const Speechbubble = () => {
           <div>
             {/* <button>All lights off at 10</button> */}
             <button onClick={() => cycleShownHabit(0)}>
-              {shownHabits[0].text}
+              {habits[shownHabitIndices[0]].text}
             </button>
           </div>
         </Col>
         <Col>
           <div>
             <button onClick={() => cycleShownHabit(1)}>
-              {shownHabits[1].text}
+              {habits[shownHabitIndices[1]].text}
             </button>
           </div>
         </Col>
