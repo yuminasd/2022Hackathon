@@ -1,6 +1,7 @@
 import Meta from "../components/Meta";
 import Speechbubble from "../components/Speechbubble";
 import Controls from '../components/Controls';
+import Header from '../components/Header';
 import Grids from "../components/Grids";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
