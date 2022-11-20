@@ -15,7 +15,7 @@ const Dashboard = () => {
       <Meta title={pageTitle}/>
       <Row className="align-items-center">
         <Col sm={1}>
-          <Grids/>
+          <Grids Home={"Home-n.svg"} Dashboard={"Control-s.svg"} Habits={"Habits-n.svg"}/>
         </Col>
         <Col>
           <Row>

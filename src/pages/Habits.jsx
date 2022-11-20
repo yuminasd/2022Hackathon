@@ -13,7 +13,7 @@ const Habits = () => {
       <Meta title={pageTitle}/>
       <Row className="align-items-center">
         <Col sm={1}>
-            <Grids/>
+            <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"}/>
         </Col>
         <Col>
             Placeholder
