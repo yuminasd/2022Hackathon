@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Game from "../gameEntities/Game";
 
-function GameCanvas(props) {
+function GameCanvas({ canvasWidth, canvasHeight }) {
   const [game, setGame] = useState();
 
   const canvasRef = useRef();
@@ -11,10 +11,6 @@ function GameCanvas(props) {
     if (!game) return;
     game.tick(ctx, tickCount);
   };
-
-  // Set canvas to be fullscreen
-  const canvasWidth = window.innerWidth;
-  const canvasHeight = window.innerHeight;
 
   useEffect(() => {
     // useEffect is triggered after first render, so canvasRef.current will always be initialized
@@ -30,8 +26,8 @@ function GameCanvas(props) {
     let animationFrameId;
 
     const render = () => {
-      ctx.canvas.width = window.innerWidth;
-      ctx.canvas.height = window.innerHeight;
+      ctx.canvas.width = canvasWidth;
+      ctx.canvas.height = canvasHeight;
       draw(ctx, tickCount);
       tickCount++;
       animationFrameId = window.requestAnimationFrame(render);
@@ -44,7 +40,7 @@ function GameCanvas(props) {
   }, [draw]);
 
   return (
-    <div style={{ position: "fixed", left: 0, top: 0 }}>
+    <div>
       <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
     </div>
   );

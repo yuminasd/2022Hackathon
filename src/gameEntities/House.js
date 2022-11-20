@@ -272,7 +272,7 @@ class House extends Sprite {
       }
     }
 
-    const halfWindowWidth = window.innerWidth / 2;
+    const halfWindowWidth = 1114 / 2;
     const directionRand = random.float();
     const directionCutoff = this.sigmoid(
       (6 * (this.centerX - halfWindowWidth)) / halfWindowWidth
@@ -283,7 +283,8 @@ class House extends Sprite {
         : this.animations.walk.left;
 
     const neutralRand = random.float();
-    animation = neutralRand < 0.7 ? this.animations.neutral : animation;
+    // HACK - ZERO PERCENT CHANCE OF WALKING. Changed neutralRand < 0.7 to neutralRand < 1
+    animation = neutralRand < 1 ? this.animations.neutral : animation;
 
     return animation;
   }

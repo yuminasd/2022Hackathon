@@ -15,20 +15,20 @@ class Game {
     this.imageRepo = loadImageRepo();
 
     this.canvas = canvas;
-    this.house = new House(
-      {
-        pos: {
-          x: canvas.width / 2 - 150 / 2,
-          y: canvas.height * 0.6,
-        },
-        width: 150,
-        height: 162,
-      },
-      this.imageRepo.house,
-      this
-    );
-    this.eventBuilder = new EventBuilder(this.house);
-    this.eventListener = new EventListener(this.house, this.eventBuilder);
+    // this.house = new House(
+    //   {
+    //     pos: {
+    //       x: canvas.width / 2 - 150 / 2,
+    //       y: canvas.height * 0.6,
+    //     },
+    //     width: 150,
+    //     height: 162,
+    //   },
+    //   this.imageRepo.house,
+    //   this
+    // );
+    this.eventBuilder = new EventBuilder(undefined);
+    this.eventListener = new EventListener(undefined, this.eventBuilder);
 
     this.createUserEvents();
   }
@@ -79,7 +79,7 @@ class Game {
     const emittedEvents = this.eventBuilder.tick(tickCount);
     this.eventListener.tick(emittedEvents, tickCount);
 
-    this.house.tick(ctx, tickCount);
+    // this.house.tick(ctx, tickCount);
   }
 
   // private
