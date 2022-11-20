@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import Habits from "./pages/Habits";
 import Settings from "./pages/Settings";
+import Leaderboard from "./pages/Leaderboard";
 
 const App = () => {
   // const [shownHabits, setShownHabits] = useState([
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/Habits" element={<Habits />} />
             <Route path="/Settings" element={<Settings />} />
+            <Route path="/Leaderboard" element={<Leaderboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
