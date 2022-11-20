@@ -20,9 +20,11 @@ const Settings = () => {
                     Settings={"Settings-s.svg"}
                 />
             </Col>
+            <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
             <Col>
-                <img src="Accounts.png" alt="" width="98%"/>
+                <img src="Accounts.png" alt="" width="98%"/>   
             </Col>
+            </div>
             </Row>
         </div>
         

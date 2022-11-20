@@ -16,9 +16,9 @@ const Habits = () => {
             <Grids Home={"Home-n.svg"} Dashboard={"Control-n.svg"} Habits={"Habits-s.svg"} Settings={"Settings-n.svg"}/>
         </Col>
         <Col>
-            <Row>
+        <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
                 <img src="Habits.png" alt="" width="98%"/>
-            </Row>
+        </div>
         </Col>
         </Row>
     </div>
