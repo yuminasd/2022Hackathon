@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MainContext from "./context";
@@ -40,29 +40,56 @@ const Speechbubble = () => {
 
   return (
     <Container>
-      <Row>
-        <div>
-          <button>
+      <Row className="mt-4">
+        <div
+          className="bg-light"
+          style={{
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            borderBottomLeftRadius: 20,
+          }}
+        >
+          <p>
             Did you know you can save 10 Trees this week? Currently it is 20°C,
             automate your thermostat through our smart AI based on real time
             weather data to automatically turn off cooling when not needed!
-          </button>
+          </p>
         </div>
       </Row>
-      <Row>
+      <Row className="mt-4">
         <Col>
           <div>
             {/* <button>All lights off at 10</button> */}
-            <button onClick={() => cycleShownHabit(0)}>
+            <Button
+              variant="light"
+              className=" p-4"
+              style={{
+                minWidth: 200,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+                borderBottomLeftRadius: 20,
+              }}
+              onClick={() => cycleShownHabit(0)}
+            >
               {habits[shownHabitIndices[0]].text}
-            </button>
+            </Button>
           </div>
         </Col>
         <Col>
           <div>
-            <button onClick={() => cycleShownHabit(1)}>
+            <Button
+              variant="light"
+              className=" p-4"
+              style={{
+                minWidth: 200,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+                borderBottomLeftRadius: 20,
+              }}
+              onClick={() => cycleShownHabit(1)}
+            >
               {habits[shownHabitIndices[1]].text}
-            </button>
+            </Button>
           </div>
         </Col>
       </Row>
