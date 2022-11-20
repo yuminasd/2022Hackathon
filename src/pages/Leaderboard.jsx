@@ -22,7 +22,13 @@ const Leaderboard = () => {
             </Col>
             <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
             <Col>
-                <img src="Leaderboard.png" alt="" width="98%"/>             
+                <Row>
+                <Header
+                Header={"../../LeaderboardHeaderTitle.svg"} />
+                </Row>
+                <Row>
+                    <img src="Leaderboard.png" alt="" width="98%"/>             
+                </Row>
             </Col>
             </div>
             </Row>

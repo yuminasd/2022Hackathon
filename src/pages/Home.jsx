@@ -25,7 +25,8 @@ const Home = () => {
         </Col>
         <Col>
           <Row>
-            <Header />
+            <Header
+            Header={"../../HomePageHeader.svg"} />
           </Row>
           <Row>
             {/* <Landscape /> */}

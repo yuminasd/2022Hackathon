@@ -26,7 +26,9 @@ const Dashboard = () => {
         <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
         <Col>
           <Row>
-            <Header />
+            <Header 
+            Header={"../../ControlPageHeader.svg"}
+            />
           </Row>
             <Row>
                 <Controls/>

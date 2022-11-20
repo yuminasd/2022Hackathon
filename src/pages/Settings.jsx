@@ -12,22 +12,30 @@ const Settings = () => {
         <div>
             <Meta title={pageTitle} />
             <Row className="align-items-center">
-            <Col sm={1}>
-                <Grids
-                    Home={"Home-n.svg"}
-                    Dashboard={"Control-n.svg"}
-                    Habits={"Habits-n.svg"}
-                    Settings={"Settings-s.svg"}
-                />
-            </Col>
-            <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
-            <Col>
-                <img src="Accounts.png" alt="" width="98%"/>   
-            </Col>
-            </div>
+                <Col sm={1}>
+                    <Grids
+                        Home={"Home-n.svg"}
+                        Dashboard={"Control-n.svg"}
+                        Habits={"Habits-n.svg"}
+                        Settings={"Settings-s.svg"}
+                    />
+                </Col>
+
+                <Col>
+                    <Row>
+                        <Header
+                        Header={"../../SettingsTitleHeader.svg"}>
+                        </Header>
+                        <div  style={{backgroundImage: `url("Background.png")`, width:"90%"}}>
+                    </div>
+                    </Row>
+
+                    <Row>
+                        <img src="Accounts.png" alt="" width="98%"/>   
+                    </Row>
+                </Col>
             </Row>
         </div>
-        
     );
 };
 
