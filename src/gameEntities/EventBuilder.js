@@ -66,7 +66,7 @@ class EventBuilder {
     return this._mouseIsPressed;
   }
 
-  get mouuseIsOverHouse() {
+  get mouseIsOverHouse() {
     return this._mouseIsOverHouse;
   }
 
@@ -159,7 +159,9 @@ class EventBuilder {
     const lastMouseEvent = this.mouseEvents[0];
     if (tickCount > lastMouseEvent.tickCount) return; // No new events since last tick
 
-    this.buildMouseOverHouseEvents(tickCount);
+    if (this.house) {
+      this.buildMouseOverHouseEvents(tickCount);
+    }
   }
 
   // private
