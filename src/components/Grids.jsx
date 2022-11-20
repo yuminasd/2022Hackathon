@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Container } from 'react-bootstrap'
 
-const Grids = ({Home, Dashboard, Habits, Settings}) => {
+const Grids = ({Home, Dashboard, Habits, Settings, Leaderboard}) => {
     return(
         <Container>
             <div>
@@ -33,6 +33,13 @@ const Grids = ({Home, Dashboard, Habits, Settings}) => {
                             </Link> 
                         </button>
                     </div> 
+                    <div>
+                        <button class="btn btn-light">
+                            <Link to="/Leaderboard" className="nav-link px-2 link-secondary">
+                                <img src={Leaderboard} alt=""/>
+                            </Link> 
+                        </button>
+                    </div>
                     </div>   
         </Container>
     )
